@@ -19,7 +19,7 @@ public class ProjectService {
 
     @Transactional(readOnly = true)
     public List<ProjectResponse> findAll() {
-        return projectRepository.findAllByOrderBySortOrderAsc()
+        return projectRepository.findAllByOrderBySortOrderDesc()
                 .stream()
                 .map(this::toResponse)
                 .toList();
